@@ -434,7 +434,7 @@
     // =====================================================
     
     function initNewsletterForm() {
-        const newsletterForm = $('.newsletter-form');
+        const newsletterForm = document.querySelector('.newsletter-form');
         if (!newsletterForm) return;
         
         newsletterForm.addEventListener('submit', handleNewsletterSubmit);
