@@ -66,24 +66,27 @@
     // =====================================================
     
     function initLanguageSwitcher() {
-        const langToggles = $('.lang-toggle');
+        const langToggles = document.querySelectorAll('.lang-toggle');
         const html = document.documentElement;
         
         // Get initial language from HTML attribute or default to 'en'
         currentLang = html.getAttribute('data-lang') || 'en';
         updateLanguageToggles();
         
-        addEventListeners(langToggles, 'click', function(e) {
-            e.preventDefault();
-            const newLang = this.getAttribute('data-lang');
-            
-            if (newLang !== currentLang) {
-                switchLanguage(newLang);
-            }
+        langToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const newLang = this.getAttribute('data-lang');
+                
+                if (newLang !== currentLang) {
+                    switchLanguage(newLang);
+                }
+            });
         });
     }
     
     function switchLanguage(lang) {
+        console.log('Switching language to:', lang);
         currentLang = lang;
         const html = document.documentElement;
         
@@ -114,7 +117,7 @@
     }
     
     function updateTranslatableElements(lang) {
-        const elements = $(`[data-${lang}]`);
+        const elements = document.querySelectorAll(`[data-${lang}]`);
         elements.forEach(element => {
             const translation = element.getAttribute(`data-${lang}`);
             if (translation) {
@@ -139,7 +142,7 @@
     }
     
     function updateLanguageToggles() {
-        const langToggles = $('.lang-toggle');
+        const langToggles = document.querySelectorAll('.lang-toggle');
         langToggles.forEach(toggle => {
             const toggleLang = toggle.getAttribute('data-lang');
             if (toggleLang === currentLang) {
@@ -155,7 +158,7 @@
     }
     
     function updateFormPlaceholders(lang) {
-        const placeholderElements = $(`[data-placeholder-${lang}]`);
+        const placeholderElements = document.querySelectorAll(`[data-placeholder-${lang}]`);
         placeholderElements.forEach(element => {
             const placeholder = element.getAttribute(`data-placeholder-${lang}`);
             if (placeholder) {
@@ -181,7 +184,7 @@
     // =====================================================
     
     function initContactForm() {
-        const contactForm = $('.contact-form');
+        const contactForm = document.querySelector('.contact-form');
         if (!contactForm) return;
         
         contactForm.addEventListener('submit', handleFormSubmit);
@@ -393,7 +396,7 @@
     }
     
     function showFormMessage(type, message) {
-        const form = $('.contact-form');
+        const form = document.querySelector('.contact-form');
         let messagesDiv = form.querySelector('.form-messages');
         
         // Create messages container if it doesn't exist
