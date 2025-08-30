@@ -1,0 +1,33 @@
+{
+  "name": "digilima-website",
+  "version": "1.0.0",
+  "description": "DigiLima - Web development services in Cyprus and Greece",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests specified'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "resend": "^2.1.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "keywords": [
+    "web-development",
+    "cyprus",
+    "greece",
+    "websites",
+    "shopify",
+    "custom-development"
+  ],
+  "author": "DigiLima",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digilima/website.git"
+  },
+  "homepage": "https://digilima.com"
+}

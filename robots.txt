@@ -1,0 +1,42 @@
+# DigiLima.com - Robots.txt
+# Web Developer in Limassol, Cyprus
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://digilima.com/sitemap.xml
+
+# Disallow crawling of certain directories
+Disallow: /assets/scss/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay for general bots
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
