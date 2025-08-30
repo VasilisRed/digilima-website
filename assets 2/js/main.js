@@ -77,9 +77,12 @@
             toggle.addEventListener('click', function(e) {
                 e.preventDefault();
                 const newLang = this.getAttribute('data-lang');
+                console.log('Language button clicked:', newLang, 'Current:', currentLang);
                 
                 if (newLang !== currentLang) {
                     switchLanguage(newLang);
+                } else {
+                    console.log('Same language, no switch needed');
                 }
             });
         });
@@ -117,7 +120,9 @@
     }
     
     function updateTranslatableElements(lang) {
+        console.log('Updating elements for language:', lang);
         const elements = document.querySelectorAll(`[data-${lang}]`);
+        console.log('Found elements:', elements.length);
         elements.forEach(element => {
             const translation = element.getAttribute(`data-${lang}`);
             if (translation) {
@@ -838,6 +843,10 @@
         
         console.log('DigiLima.com JavaScript initialized successfully');
     }
+    
+    // Make functions globally accessible for debugging
+    window.switchLanguage = switchLanguage;
+    window.currentLang = () => currentLang;
     
     // Start initialization
     init();
