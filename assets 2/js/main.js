@@ -852,3 +852,9 @@
     init();
     
 })();
+
+// Test if script loads
+window.testDigiLima = function() {
+    console.log('DigiLima script loaded successfully!');
+    return 'Script is working';
+};
